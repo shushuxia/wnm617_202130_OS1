@@ -1,0 +1,203 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #f6f6f6;
+}
+
+.header-container{
+  display: block;
+}
+.main-container{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+h1, h2, h3{
+  font-family: serif;
+}
+
+
+header{
+  display: block
+}
+
+
+.footer-container{
+  color: white;
+  text-align: center;
+  padding-top:60px;
+  padding-bottom: 60px;
+  margin-top: 120px;
+  background-image: linear-gradient(#face48, #f64697);
+}
+
+.title{
+  color: white;
+  text-transform: uppercase;
+  display:block;
+  text-align: center;
+  padding-top:60px;
+  padding-bottom: 60px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-family: serif;
+  background-image: linear-gradient(#f64697, #face48);
+  
+
+}
+
+
+nav{
+  display:block;
+  margin: 0 auto;
+  width: 60%;
+
+}
+nav ul{
+  list-style-type: none;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-around;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px auto;
+  width: 150px;
+  height: 150px;
+  background: white;
+  border-radius: 75px;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  transition: 1s box-shadow;
+}
+
+nav a:hover {
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+}
+
+nav a:hover::before, nav a:hover::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #FDA8CF;
+  border-radius: 75px;
+  z-index: -1;
+  animation: 1s clockwise infinite;
+}
+
+nav a:hover:after {
+  background: #F3CE5E;
+  animation: 2s counterclockwise infinite;
+}
+
+article{
+  width: 60%;
+  display: inline-block;
+}
+
+aside{
+  width: 30%;
+  float: right;
+  padding: 20px 60px;
+  margin-top: 10%;
+  background: white;
+  transform: perspective(900px) rotateX(45deg);
+  transition: .5s all ease;
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+
+}
+
+aside:hover{
+  transform: rotateX(0);
+}
+
+@keyframes clockwise {
+  0% {
+    top: -5px;
+    left: 0;
+  }
+  12% {
+    top: -2px;
+    left: 2px;
+  }
+  25% {
+    top: 0;
+    left: 5px;    
+  }
+  37% {
+    top: 2px;
+    left: 2px;
+  }
+  50% {
+    top: 5px;
+    left: 0;    
+  }
+  62% {
+    top: 2px;
+    left: -2px;
+  }
+  75% {
+    top: 0;
+    left: -5px;
+  }
+  87% {
+    top: -2px;
+    left: -2px;
+  }
+  100% {
+    top: -5px;
+    left: 0;    
+  }
+}
+
+@keyframes counterclockwise {
+  0% {
+    top: -5px;
+    right: 0;
+  }
+  12% {
+    top: -2px;
+    right: 2px;
+  }
+  25% {
+    top: 0;
+    right: 5px;    
+  }
+  37% {
+    top: 2px;
+    right: 2px;
+  }
+  50% {
+    top: 5px;
+    right: 0;    
+  }
+  62% {
+    top: 2px;
+    right: -2px;
+  }
+  75% {
+    top: 0;
+    right: -5px;
+  }
+  87% {
+    top: -2px;
+    right: -2px;
+  }
+  100% {
+    top: -5px;
+    right: 0;    
+  }
+}
+
