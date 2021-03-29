@@ -85,6 +85,55 @@ a:hover {
 
 }
 
+.user-photo-icon{
+  width: 40vw;
+  height: 40vw;
+  margin-top: 1em;
+  margin-left: 30vw;
+  margin-bottom: 0;
+  border: 2px solid var(--color-neutral-dark);
+  border-radius: 50%;
+}
+
+.user-photo-icon img{
+  border-radius: 50%;
+}
+
+.animal-edit-icon{
+  width: 30vw;
+  height: 30vw;
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  border-radius: 20%;
+  border: 2px solid var(--color-neutral-dark);
+}
+
+.animal-edit-icon img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%;
+}
+
+.animal-add-icon{
+  
+  width: 30vw;
+  height: 30vw;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  border: 2px solid var(--color-neutral-dark);
+  border-radius: 20%;
+}
+
+.delete-animal{
+  color: var(--color-main-medium);
+  text-align: right;
+  font-weight: bold;
+  margin-right: 1em;
+  margin-top: 1.5em;
+}
+
 .tabgroup {}
 .tabgroup .tabs {
     display: flex;
@@ -109,7 +158,7 @@ a:hover {
 }
 .tabgroup .contents {
    height:65vh;
-   
+   margin-top: 0.5em;
    overflow:hidden;
    position:relative;
 }
@@ -127,6 +176,7 @@ a:hover {
 }
 
 .profilemap-container{
+  margin-top: 0.5em;
   height: 65vh;
   overflow: scroll;
 
@@ -198,6 +248,19 @@ img {
 
 }
 
+.location-description-top{
+  width: 100%;
+  height: 30%;
+  background-image:url(../img/map.png);
+  background-position:center;
+  background-size:cover;
+  margin-bottom: 1.5em;
+}
+
+.animal-add-pin{
+  height: 50px;
+  width: 50px;
+}
 /* FORMS */
 .form-control {
     margin: 1em 0;
@@ -205,6 +268,7 @@ img {
 .form-label {
     font-size: 1em;
     font-weight: bold;
+    
     color: var(--color-neutral-dark);
 
 }
@@ -222,6 +286,22 @@ img {
     border-bottom: 1.5px solid var(--color-neutral-dark);
     outline: 0;
 }
+
+.form-box {
+    display: inline-block;
+    background-color: var(--color-neutral-light);
+    width: 95vw;
+    height: 7em;
+    border: 1.5px solid var(--color-neutral-dark);
+    font: inherit;
+    padding: 0.5em;
+    margin: 0 2.5vw;
+    border-bottom: 1.5px solid var(--color-neutral-dark);
+    border-radius: 5px;
+    outline: 0;
+
+}
+
 .form-button {
     display: inline-block;
     width: 100%;
@@ -303,6 +383,22 @@ img {
    background-size:cover;
 }
 
+#add-location-page [data-role='main'] {
+   background-image:url(../img/map.png);
+   background-position:center;
+   background-size:cover;
+}
+
+#profile-add-location-page [data-role='main'] {
+   background-image:url(../img/map.png);
+   background-position:center;
+   background-size:cover;
+}
+
+.add-location-map{
+  height: 100%;
+  width: 100%;
+}
 
 
 
@@ -377,16 +473,24 @@ img {
 .recent-pin{
   position:absolute;
   top: 30vh;
-  left: 30vw;
+  left: 35vw;
 }
 
 .recent-pin img{
-  width: 10rem;
+  width: 7.5rem;
 }
 
+.location-description-pin{
+  top: 25%;
+  left: 35%;
+  position: relative;
+}
 
+.location-description-pin img{
+  width: 7.5rem;
+}
 
-#list-page{
+#list-page, #existed-animal-page {
   background-color: var(--color-neutral-dark);
 }
 
@@ -411,6 +515,8 @@ img {
 .search img, .sort img{
   width: 100%;
 }
+
+
 
 
 /* MODALS */
@@ -472,12 +578,17 @@ img {
    background-color: var(--color-neutral-light);
    color: var(--color-neutral-dark);
 }
+
+.modal-drawer.bottom{
+   background-color: var(--color-neutral-dark);
+   color: var(--color-neutral-light);
+}
+
 .modal-drawer.left { left:0; transform:translateX(-100%); }
 .modal-drawer.right { right:0; transform:translateX(100%); }
 
 .modal-drawer.top,
 .modal-drawer.bottom {
-   height:30vh;
    width:100%;
 }
 .modal-drawer.top { top:0; transform:translateY(-100%); }
@@ -530,14 +641,36 @@ img {
 .pin-icon{
   width: 2.5em;
   float: left;
-  padding-top: 1em;
+  padding-top: 0; 
+  display: inline-block;
 }
 .pin-text{
   margin:0;
-  padding-top: 2em;
+  padding-top: 1em;
   padding-bottom: 0.5em;
-  display: inline-block;
+ 
+  font-weight: bold;
 }
+
+.add-location-choice{
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 4em;
+  border-top: 2px solid var(--color-neutral-light);
+}
+
+.modal-confirmation{
+  margin-left: 2.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.location-map{
+  height: 100%;
+  width: 100%;
+}
+
 
 /* MODAL TOAST */
 .modal-toast {

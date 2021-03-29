@@ -18,6 +18,7 @@
 </head>
 <body>
 
+<!--SIGNIN PAGE-->
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
@@ -43,6 +44,7 @@
       </div>
    </section>
 
+<!--SIGNUP PAGE-->
    <section data-role="page" id="signup-page">
       <div data-role="main" class="display-flex flex-align-center flex-justify-center">
          <form id="signup-form" data-ajax="false">
@@ -69,9 +71,9 @@
       </div>
    </section>
 
+<!--RECENT PAGE-->
    <section data-role="page" id="recent-page">
-
-      
+ 
       <div data-role="main">
          <div class="recent-pin" data-activate="#recent-profile-modal">
             <img src="img/pin.png">
@@ -79,17 +81,11 @@
          
       
          <div class="floater bottom right">
-            <div class="btn-circle"><a href="#add-page">&plus;</a></div>
+            <div class="btn-circle"><a href="#add-location-page">&plus;</a></div>
          </div>
       
 
-         <div class="modal" id="recent-add-modal">
-            <div class="modal-back" data-deactivate="#recent-add-modal"></div>
-            <div class="modal-drawer bottom">
-               <div class="modal-head">head</div>
-               <div class="modal-body">body</div>
-            </div>
-         </div>
+         
 
          <div class="modal" id="recent-profile-modal">
             <div class="modal-back" data-deactivate="#recent-profile-modal"></div>
@@ -103,30 +99,112 @@
                   <p>Oct. 15th 2020</p>
                   <p class="modal-text-title">Tracking Location</p>
                   <p>100 Exchange street, Boston, MA</p>
-                  <p class="modal-text-title">Weight</p>
-                  <p>About 8 lbs</p>
-                  <p class="modal-text-title">Health Condition</p>
-                  <p>Seems better than last time</p>
                   <p class="modal-text-title">Note</p>
                   <p>2 weeks after last time I saw Andy, the wound on his cheek seems to be cured. I found him this time besides the food waste bin at the street corner. The weather is getting cold, so I guess it would be easier for stay cats like him to find food not rotten yet from trash bins.</p>
-               </div>
-
-               
+               </div>        
             </div>
          </div>
       </div>
+
       <footer data-role="footer" data-template="#footer-template"></footer>
       
    </section>
 
-   <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>Tracked Animals</h1>
+<!--ADD LOCATION PAGE-->
+   <section data-role="page" id="add-location-page">
+   	 <header data-role="header">
+         <h1>Add Location</h1>
          <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+         </ul>
+     </header>
+     <div data-role="main">
+     	
+          <div class="recent-pin" data-activate="#add-location-modal">
+            <img src="img/icon/paw.png">
+         </div>
+
+         <div class="modal" id="add-location-modal">
+            <div class="modal-back" data-deactivate="#add-location-modal"></div>
+            <div class="modal-drawer bottom">
+               <div class ="pin-container">
+                 <img src="img/icon/paw.png" class="pin-icon"> 
+                 <div class="pin-text"> 100 Exchange Street</div>
+               </div>  
+               <div class="modal-confirmation">Add this location to</div>
+               <div>
+               	<div class="add-location-choice"><a href="#existed-animal-page">Existed Animal </a></div>
+               	<div class="add-location-choice"><a href="#create-new-page">Create New Animal</a></div>
+
+               </div>
+            </div>
+          </div>
+
+
+   </section>
+
+   <section data-role="page" id="profile-add-location-page">
+   	 <header data-role="header">
+         <h1>Add Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+         </ul>
+     </header>
+     <div data-role="main">
+     	
+          <div class="recent-pin">
+            <a href="#location-description-page"><img src="img/icon/paw.png"></a>
+         </div>
+
+
+   </section>
+
+<!--CREATE NEW ANIMAL PAGE-->
+   <section data-role="page" id="create-new-page">
+      <header data-role="header">
+         <h1>Create New Animal</h1>
+         <ul>
+            
+            <li><a href="#" data-rel="back">&larr;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#add-page">&plus;</a></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         
          </ul>
       </header>
+
+      <div class="animal-add-icon"></div>
+
+      <div class="form-control">
+        <label for="recent-add-name" class="form-label">Name</label>
+        <input id="recent-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
+      </div>
+      <div class="form-control">
+        <label for="recent-add-type" class="form-label">Type</label>
+        <input id="recent-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+      </div>
+      <div class="form-control">
+        <label for="recent-add-location" class="form-label">Location</label>
+        <input id="recent-add-location" type="text" class="form-input" data-role="none" placeholder="Type animal location" Value="100 exchange street">
+      </div>
+      <div class="form-control">
+        <label for="recent-add-note" class="form-label">Note</label>
+        <textarea id="recent-add-note" class="form-box" data-role="none" placeholder="Write note about the animal"></textarea>
+      </div>
+      
+      
+
+   </section>
+
+<!--EXISTED LIST PAGE-->
+   <section data-role="page" id="existed-animal-page">
+
+      <header data-role="header">
+         <h1>My Animals</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+         </ul>
+      </header>
+
       <div class="filter-container display-flex">
          <div class="filter">All</div>
          <div clsss="display-flex flex-justify-right">
@@ -134,6 +212,138 @@
             <div class="search"><a><img src="img/icon/search.svg"></a></div>
          </div>
       </div>
+
+      <div data-role="main">
+         <div class="overscroll">
+            <div class="animallist">
+               <a href="#location-description-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/cat1.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Andy</div>
+                     <div class="animallist-type"><strong>Type: </strong> Cat</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 1 day ago</div>
+                  </div>
+               </a>               
+               <a href="#location-description-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/dog1.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Tom</div>
+                     <div class="animallist-type"><strong>Type: </strong> Dog</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 3 days ago</div>
+                  </div>
+               </a>
+               <a href="#location-description-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/cat3.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Loki</div>
+                     <div class="animallist-type"><strong>Type: </strong> Cat</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 5 days ago</div>
+                  </div>
+               </a>
+               <a href="#location-description-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/dog2.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Jerry</div>
+                     <div class="animallist-type"><strong>Type: </strong> Dog</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 1 week ago</div>
+                  </div>
+               </a>
+               <a href="#location-description-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/cat2.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Phoenix</div>
+                     <div class="animallist-type"><strong>Type: </strong> Cat</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 1 month ago</div>
+                  </div>
+               </a>
+               <a href="#location-description-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/deer1.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Silver</div>
+                     <div class="animallist-type"><strong>Type: </strong> Deer</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 3 month month</div>
+                  </div>
+               </a> 
+            </div>
+         </div>
+      </div>
+
+   </section>
+
+<!--LOCATION DESCRIPTION PAGE-->
+   <section data-role="page" id="location-description-page">
+   	 <header data-role="header">
+         <h1>Add Location Description</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+     </header>
+     <div data-role="main" class="display-flex flex-column">
+     	<div class="location-description-top">
+     	<div class="location-description-pin">
+            <img src="img/pin.png">
+         </div>
+     	</div>
+     	<div class="location-description-bottom">
+
+	     <div class="form-control">
+	        <label for="description-add-name" class="form-label">Name</label>
+	        <input id="description-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name" value="Andy">
+	      </div>
+	      <div class="form-control">
+	        <label for="description-add-type" class="form-label">Type</label>
+	        <input id="description-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type" Value="Cat">
+	      </div>
+	      <div class="form-control">
+	        <label for="description-add-location" class="form-label">Location</label>
+	        <input id="description-add-location" type="text" class="form-input" data-role="none" placeholder="Type animal location" Value="100 exchange street">
+	      </div>
+	      <div class="form-control">
+	        <label for="description-add-note" class="form-label">Note</label>
+	        <textarea id="description-add-note" class="form-box" data-role="none" placeholder="Write note about the animal"></textarea>
+	      </div>
+	    
+     		
+     	</div>
+
+     	
+     </div>
+
+   </section>
+
+<!--ANIMAL LIST PAGE-->
+   <section data-role="page" id="list-page">
+
+      <header data-role="header">
+         <h1>Tracked Animals</h1>
+         <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#add-page">&plus;</a></li>
+         </ul>
+      </header>
+
+      <div class="filter-container display-flex">
+         <div class="filter">All</div>
+         <div clsss="display-flex flex-justify-right">
+            <div class="sort"><a><img src="img/icon/sort.svg"></a></div>
+            <div class="search"><a><img src="img/icon/search.svg"></a></div>
+         </div>
+      </div>
+
       <div data-role="main">
          <div class="overscroll">
             <div class="animallist">
@@ -146,8 +356,7 @@
                      <div class="animallist-type"><strong>Type: </strong> Cat</div>
                      <div class="animallist-time"><strong>Last Time Saw: </strong> 1 day ago</div>
                   </div>
-               </a>
-               
+               </a>               
                <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
                      <img src="img/dog1.jpg" alt="">
@@ -178,8 +387,7 @@
                      <div class="animallist-time"><strong>Last Time Saw: </strong> 1 week ago</div>
                   </div>
                </a>
-
-                  <a href="#animal-profile-page" class="animallist-item">
+               <a href="#animal-profile-page" class="animallist-item">
                   <div class="animallist-image">
                      <img src="img/cat2.jpg" alt="">
                   </div>
@@ -198,19 +406,19 @@
                      <div class="animallist-type"><strong>Type: </strong> Deer</div>
                      <div class="animallist-time"><strong>Last Time Saw: </strong> 3 month month</div>
                   </div>
-               </a>
-               
-               
+               </a> 
             </div>
          </div>
       </div>
+
       <footer data-role="footer" data-template="#footer-template"></footer>
 
    </section>
 
+<!--LIST ADD PAGE-->
    <section data-role="page" id="add-page">
       <header data-role="header">
-         <h1>Add New Tracking</h1>
+         <h1>Add New Animal</h1>
          <ul>
             
             <li><a href="#" data-rel="back">&larr;</a></li>
@@ -219,85 +427,153 @@
          
          </ul>
       </header>
+
+      <div class="animal-add-icon"></div>
+
       <div class="form-control">
-                  <label for="list-add-name" class="form-label">Name</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-type" class="form-label">Type</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-location" class="form-label">Location</label>
-                  <input id="list-add-location" type="text" class="form-input" data-role="none" placeholder="Type animal location">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-weight" class="form-label">Weight</label>
-                  <input id="list-add-weight" type="text" class="form-input" data-role="none" placeholder="Type animal weight">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-health" class="form-label">Health Condition</label>
-                  <input id="list-add-health" type="text" class="form-input" data-role="none" placeholder="Type animal health condition">
+        <label for="list-add-name" class="form-label">Name</label>
+        <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
+      </div>
+      <div class="form-control">
+        <label for="list-add-type" class="form-label">Type</label>
+        <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+      </div>
+
+      <a href="#location-description-page">
+      <div class ="pin-container">
+        <img src="img/icon/map.svg" class="pin-icon"> 
+          <div class="pin-text"> Add Location</div>
+      </div>
+  	  </a>
+      
+
+   </section>
+
+<!--ANIMAL PROFILE PAGE-->
+   <section data-role="page" id="animal-profile-page">
+      <header data-role="header">
+         <h1>Animal Profile</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#edit-animal-page">Edit</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column">
+         <div class="profile-top-bg"></div>
+         <div class="profile-top">
+            <div class="animal-profile-image"><img src="img/cat1.jpg"></div>
+            <div class="animal-profile-text">
+               <p class="animal-profile-name"><strong>Name: </strong>Andy</p>
+               <div class="animal-profile-info">
+                 <p class="animal-profile-name"><strong>Type: </strong>Cat</p>
+                 <p class="animal-profile-name"><strong>Tracking Times: </strong>5</p>
                </div>
             </div>
-            <!--
-            <div>
-               <input class="save-btn"type="submit" value="Save" data-role="none">
-            </div>
-         -->
+         </div>
+
+         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
+         
+         <div class="tabgroup">
+           <div class="tabs">
+            <!-- .tab*4>{Link $} -->
+            <div class="tab active">Map</div>
+            <div class="tab">History</div>
+            <div class="tab">Stats</div>
+           </div>
+         
+           <div class="contents">
+            <!-- .content*4>h2{Content $}+div>p*4>lorem50 -->
+             <div class="content active">
+               
+               <div class="floater top right">
+            		<div class="btn-circle"><a href="#profile-add-location-page">&plus;</a></div>
+         	   </div>
+               
+               <div class="profilemap-container">
+                  <img src="img/profilemap.jpg">
+               </div>
+
+
+             </div>
+             <div class="content overscroll content-history">
+               <div class="content-title">Tracking Record</div>
+               <div>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi voluptatum minus quod, perferendis, dolores assumenda tempore, incidunt aliquam distinctio accusamus praesentium? Eum consequuntur asperiores beatae nulla magni natus repellendus a quis quisquam, quaerat ullam exercitationem magnam nemo necessitatibus nihil, dolores quo aliquam et autem minima veritatis ipsam fugit eaque! Unde.</p>
+                  <p>Magnam autem fuga deleniti impedit dolore animi temporibus qui commodi aperiam ratione. Blanditiis iusto illum facere sed, repellendus, nesciunt sint rem quibusdam velit sapiente aliquid sit nemo quasi voluptate ea perspiciatis quia eligendi praesentium harum! Ipsam voluptatum recusandae cumque sit illo iste velit sequi porro ducimus, necessitatibus dolore, magnam fugit!</p>
+                  <p>Ad laborum eum eius vero ullam est debitis. Ducimus praesentium quae aperiam amet ullam distinctio a similique ratione aliquid illo tempore, perspiciatis! Dolore dolor distinctio deserunt nostrum repellat nulla quae illum. Iure, ut repellendus eaque nobis, quaerat unde optio commodi quod, labore porro, numquam perferendis quam. Quas dolorum sint, laudantium.</p>
+                  <p>Vero provident error amet hic aspernatur sed delectus. Repudiandae quas, tempora atque quo dolore eos eius necessitatibus officiis quae numquam facilis minus iste? Perspiciatis ut expedita, quas veritatis laborum. Pariatur officiis nihil totam iusto doloribus ex quas expedita quidem exercitationem hic velit fugiat culpa et, architecto laudantium unde asperiores dolor.</p>
+               </div>
+             </div>
+            
+             <div class="content overscroll">
+               <div>
+                  <img src="img/stats.png">
+               </div>
+             </div>
+            
+           </div>     
+         </div>
+
+         </div>
+      </div>
+   </section>
+
+<!--EDIT ANIMAL PROFILE PAGE-->
+   <section data-role="page" id="edit-animal-page">
+      <header data-role="header">
+         <h1>Animal Profile</h1>
+         <ul>
+            
+            <li><a href="#" data-rel="back">&larr;</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         
+         </ul>
+      </header>
+
+      <div class="animal-edit-icon"><img src="img/cat1.jpg"></div>
+
+      <div class="form-control">
+        <label for="list-edit-name" class="form-label">Name</label>
+        <input id="list-edit-name" type="text" class="form-input" data-role="none" placeholder="Type animal name" value="Andy">
+      </div>
+      <div class="form-control">
+        <label for="list-edit-type" class="form-label">Type</label>
+        <input id="list-edit-type" type="text" class="form-input" data-role="none" placeholder="Type animal type" value="Cat">
+      </div>
+      <div class="delete-animal"><a href="#">Delete</a></div>
+
+
    </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
+<!--USER PROFILE PAGE-->
    <section data-role="page" id="user-profile-page">
+
       <div data-role="main">
-         <div class="overscroll">
-         <div class="profile-image">
+        <div class="overscroll">
+          <div class="profile-image">
             <img src="img/userphoto.jpg" alt="">
-         </div>
-         <div class="profile-bg"></div>
+          </div>
+          <div class="profile-bg"></div>
          
-         <div class="profile-body">
+          <div class="profile-body">
             <div class="profile-name">Pepe Lee</div>
             <p> Recorded <span class="keyword">21</span> trackings in total.</p>
             <p> Tracked <span class="keyword">6</span> animals in total.</p>
             <p> Favorite catogory to track is <span class="keyword">cat</span>.</p>
             <p> Favorite animal to track is <span class="keyword">Andy</span>.</p>
-            
-         </div>
+          </div>
          <div class="setting"><a href="#settings-page"><img src="img/icon/setting.svg" alt=""></a></div>
+        </div>
       </div>
-      </div>
+
       <footer data-role="footer" data-template="#footer-template"></footer>
       
    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--USER SETTING PAGE-->
    <section data-role="page" id="settings-page">
       <header data-role="header">
          <h1>Settings Page</h1>
@@ -314,6 +590,7 @@
       </div>
    </section>
 
+<!--PROFILE SETTING PAGE-->
    <section data-role="page" id="profile-settings-page">
       <header data-role="header">
          <h1>Profile Settings</h1>
@@ -323,6 +600,9 @@
             <li><a href="#" data-rel="back">Save</a></li>
          </ul>
       </header>
+
+      <div class="user-photo-icon"><img src="img/userphoto.jpg" alt=""></div>
+
       <div data-role="main">
          <form id="profile-form" data-ajax="false">
             <div class="form-control">
@@ -341,6 +621,7 @@
       </div>
    </section>
 
+<!--PASSWORD SETTING PAGE-->
    <section data-role="page" id="password-settings-page">
       <header data-role="header">
          <h1>Password Settings</h1>
@@ -371,85 +652,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-   <section data-role="page" id="animal-profile-page">
-      <header data-role="header">
-         <h1>Animal Profile</h1>
-         <ul>
-            <li><a href="#" data-rel="back">&larr;</a></li>
-         </ul>
-      </header>
-      <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top-bg"></div>
-         <div class="profile-top">
-            <div class="animal-profile-image"><img src="img/cat1.jpg"></div>
-            <div class="animal-profile-text">
-               <p class="animal-profile-name"><strong>Name: </strong>Andy</p>
-               <div class="animal-profile-info">
-               <p class="animal-profile-name"><strong>Type: </strong>Cat</p>
-               <p class="animal-profile-name"><strong>Tracking Times: </strong>5</p>
-               
-               
-               </div>
-
-            </div>
-         </div>
-         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-         
-         <div class="tabgroup">
-         <div class="tabs">
-            <!-- .tab*4>{Link $} -->
-            <div class="tab active">Map</div>
-            <div class="tab">History</div>
-            <div class="tab">Stats</div>
-         </div>
-         
-         <div class="contents">
-            <!-- .content*4>h2{Content $}+div>p*4>lorem50 -->
-            <div class="content active">
-               
-               <img src="img/icon/paw.png" class="pin-icon"> <div class="pin-text"> 100 Exchange Street</div>
-
-               
-               <div class="profilemap-container">
-                  <img src="img/profilemap.jpg">
-               </div>
-            </div>
-            <div class="content overscroll content-history">
-               <div class="content-title">Tracking Record</div>
-               <div>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi voluptatum minus quod, perferendis, dolores assumenda tempore, incidunt aliquam distinctio accusamus praesentium? Eum consequuntur asperiores beatae nulla magni natus repellendus a quis quisquam, quaerat ullam exercitationem magnam nemo necessitatibus nihil, dolores quo aliquam et autem minima veritatis ipsam fugit eaque! Unde.</p>
-                  <p>Magnam autem fuga deleniti impedit dolore animi temporibus qui commodi aperiam ratione. Blanditiis iusto illum facere sed, repellendus, nesciunt sint rem quibusdam velit sapiente aliquid sit nemo quasi voluptate ea perspiciatis quia eligendi praesentium harum! Ipsam voluptatum recusandae cumque sit illo iste velit sequi porro ducimus, necessitatibus dolore, magnam fugit!</p>
-                  <p>Ad laborum eum eius vero ullam est debitis. Ducimus praesentium quae aperiam amet ullam distinctio a similique ratione aliquid illo tempore, perspiciatis! Dolore dolor distinctio deserunt nostrum repellat nulla quae illum. Iure, ut repellendus eaque nobis, quaerat unde optio commodi quod, labore porro, numquam perferendis quam. Quas dolorum sint, laudantium.</p>
-                  <p>Vero provident error amet hic aspernatur sed delectus. Repudiandae quas, tempora atque quo dolore eos eius necessitatibus officiis quae numquam facilis minus iste? Perspiciatis ut expedita, quas veritatis laborum. Pariatur officiis nihil totam iusto doloribus ex quas expedita quidem exercitationem hic velit fugiat culpa et, architecto laudantium unde asperiores dolor.</p>
-               </div>
-            </div>
-            
-            <div class="content overscroll">
-               <div>
-                  <img src="img/stats.png">
-               </div>
-            </div>
-            
-            </div>
-        
-      </div>
-   </div>
-   </section>
-
-
-
-
-
-
+<!--USER NOTIFICATION MODAL-->
    <div class="modal" id="warning-modal">
       <div class="modal-toast top" data-deactivate="#warning-modal">
          <div class="message">Message</div>
@@ -457,12 +660,7 @@
    </div>
 
 
-
-
-
-
-
-
+<!--FOOTER MENU-->
    <script type="text/template" id="footer-template">
    <ul>
       <li><a href="#recent-page">
