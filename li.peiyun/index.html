@@ -1,9 +1,484 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animal Tracker</title>
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+   <link rel="stylesheet" href="css/app.css">
+
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+
+   <script src="js/signin.js"></script>
+   <script src="js/app.js"></script>
+
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
 </head>
 <body>
-Here is Peiyun Li's Home Page.
+
+   <section data-role="page" id="signin-page">
+      <div data-role="main" class="display-flex flex-column">
+         <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+            <img src="img/logo.png">
+         </div>
+         <form id="signin-form" data-ajax="false">
+            <div class="form-control">
+               <label for="signin-username" class="form-label">Username</label>
+               <input id="signin-username" type="text" class="form-input-cell" data-role="none" placeholder="Type your username">
+            </div>
+            <div class="form-control">
+               <label for="signin-password" class="form-label">Password</label>
+               <input id="signin-password" type="password" class="form-input-cell" data-role="none" placeholder="Type your password">
+            </div>
+            <div class="form-control">
+               <input type="submit" class="form-button-cell" value="Sign In" data-role="none">
+            </div>
+            <div class="form-control signin-alt">
+               Don't have an account?
+               <a href="#signup-page">Sign Up</a>
+            </div>
+         </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="signup-page">
+      <div data-role="main" class="display-flex flex-align-center flex-justify-center">
+         <form id="signup-form" data-ajax="false">
+            <div class="form-control">
+               <label for="signup-username" class="form-label">Username</label>
+               <input id="signup-username" type="text" class="form-input-cell" data-role="none" placeholder="Type your username">
+            </div>
+            <div class="form-control">
+               <label for="signup-password" class="form-label">Password</label>
+               <input id="signup-password" type="password" class="form-input-cell" data-role="none" placeholder="Type your password">
+            </div>
+            <div class="form-control">
+               <label for="signup-password-confirm" class="form-label">Confirm Password</label>
+               <input id="signup-password-confirm" type="password" class="form-input-cell" data-role="none" placeholder="Type your password">
+            </div>
+            <div class="form-control">
+               <a href="#recent-page" class="form-button-cell">Sign Up</a>
+            </div>
+            <div class="form-control signin-alt">
+               Already have an account?
+               <a href="#signin-page">Sign In</a>
+            </div>
+         </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="recent-page">
+
+      
+      <div data-role="main">
+         <div class="recent-pin" data-activate="#recent-profile-modal">
+            <img src="img/pin.png">
+         </div>
+         
+      
+         <div class="floater bottom right">
+            <div class="btn-circle"><a href="#add-page">&plus;</a></div>
+         </div>
+      
+
+         <div class="modal" id="recent-add-modal">
+            <div class="modal-back" data-deactivate="#recent-add-modal"></div>
+            <div class="modal-drawer bottom">
+               <div class="modal-head">head</div>
+               <div class="modal-body">body</div>
+            </div>
+         </div>
+
+         <div class="modal" id="recent-profile-modal">
+            <div class="modal-back" data-deactivate="#recent-profile-modal"></div>
+            <div class="modal-drawer left overscroll">
+               <div class="modal-head">Tracking Detail</div>
+               <div class="modal-image">
+                  <a href="#animal-profile-page"><img src="img/cat1.jpg"></a>
+               </div>
+               <div class="modal-text">
+                  <p class="modal-text-title">Tracking Date</p>
+                  <p>Oct. 15th 2020</p>
+                  <p class="modal-text-title">Tracking Location</p>
+                  <p>100 Exchange street, Boston, MA</p>
+                  <p class="modal-text-title">Weight</p>
+                  <p>About 8 lbs</p>
+                  <p class="modal-text-title">Health Condition</p>
+                  <p>Seems better than last time</p>
+                  <p class="modal-text-title">Note</p>
+                  <p>2 weeks after last time I saw Andy, the wound on his cheek seems to be cured. I found him this time besides the food waste bin at the street corner. The weather is getting cold, so I guess it would be easier for stay cats like him to find food not rotten yet from trash bins.</p>
+               </div>
+
+               
+            </div>
+         </div>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      
+   </section>
+
+   <section data-role="page" id="list-page">
+      <header data-role="header">
+         <h1>Tracked Animals</h1>
+         <ul>
+            <li class="flex-stretch"></li>
+            <li><a href="#add-page">&plus;</a></li>
+         </ul>
+      </header>
+      <div class="filter-container display-flex">
+         <div class="filter">All</div>
+         <div clsss="display-flex flex-justify-right">
+            <div class="sort"><a><img src="img/icon/sort.svg"></a></div>
+            <div class="search"><a><img src="img/icon/search.svg"></a></div>
+         </div>
+      </div>
+      <div data-role="main">
+         <div class="overscroll">
+            <div class="animallist">
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/cat1.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Andy</div>
+                     <div class="animallist-type"><strong>Type: </strong> Cat</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 1 day ago</div>
+                  </div>
+               </a>
+               
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/dog1.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Tom</div>
+                     <div class="animallist-type"><strong>Type: </strong> Dog</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 3 days ago</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/cat3.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Loki</div>
+                     <div class="animallist-type"><strong>Type: </strong> Cat</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 5 days ago</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/dog2.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Jerry</div>
+                     <div class="animallist-type"><strong>Type: </strong> Dog</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 1 week ago</div>
+                  </div>
+               </a>
+
+                  <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/cat2.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Phoenix</div>
+                     <div class="animallist-type"><strong>Type: </strong> Cat</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 1 month ago</div>
+                  </div>
+               </a>
+               <a href="#animal-profile-page" class="animallist-item">
+                  <div class="animallist-image">
+                     <img src="img/deer1.jpg" alt="">
+                  </div>
+                  <div class="animallist-description">
+                     <div class="animallist-name"><strong>Name: </strong>Silver</div>
+                     <div class="animallist-type"><strong>Type: </strong> Deer</div>
+                     <div class="animallist-time"><strong>Last Time Saw: </strong> 3 month month</div>
+                  </div>
+               </a>
+               
+               
+            </div>
+         </div>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+
+   </section>
+
+   <section data-role="page" id="add-page">
+      <header data-role="header">
+         <h1>Add New Tracking</h1>
+         <ul>
+            
+            <li><a href="#" data-rel="back">&larr;</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         
+         </ul>
+      </header>
+      <div class="form-control">
+                  <label for="list-add-name" class="form-label">Name</label>
+                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-type" class="form-label">Type</label>
+                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-location" class="form-label">Location</label>
+                  <input id="list-add-location" type="text" class="form-input" data-role="none" placeholder="Type animal location">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-weight" class="form-label">Weight</label>
+                  <input id="list-add-weight" type="text" class="form-input" data-role="none" placeholder="Type animal weight">
+               </div>
+               <div class="form-control">
+                  <label for="list-add-health" class="form-label">Health Condition</label>
+                  <input id="list-add-health" type="text" class="form-input" data-role="none" placeholder="Type animal health condition">
+               </div>
+            </div>
+            <!--
+            <div>
+               <input class="save-btn"type="submit" value="Save" data-role="none">
+            </div>
+         -->
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <section data-role="page" id="user-profile-page">
+      <div data-role="main">
+         <div class="overscroll">
+         <div class="profile-image">
+            <img src="img/userphoto.jpg" alt="">
+         </div>
+         <div class="profile-bg"></div>
+         
+         <div class="profile-body">
+            <div class="profile-name">Pepe Lee</div>
+            <p> Recorded <span class="keyword">21</span> trackings in total.</p>
+            <p> Tracked <span class="keyword">6</span> animals in total.</p>
+            <p> Favorite catogory to track is <span class="keyword">cat</span>.</p>
+            <p> Favorite animal to track is <span class="keyword">Andy</span>.</p>
+            
+         </div>
+         <div class="setting"><a href="#settings-page"><img src="img/icon/setting.svg" alt=""></a></div>
+      </div>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+      
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <section data-role="page" id="settings-page">
+      <header data-role="header">
+         <h1>Settings Page</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <ul class="settings-list">
+            <li class="settings-item"><a href="#profile-settings-page">Profile Settings</a></li>
+            <li class="settings-item"><a href="#password-settings-page">Change Password</a></li>
+            <li class="settings-item"><a href="#" class="js-logout">Logout</a></li>
+         </ul>
+      </div>
+   </section>
+
+   <section data-role="page" id="profile-settings-page">
+      <header data-role="header">
+         <h1>Profile Settings</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="profile-form" data-ajax="false">
+            <div class="form-control">
+               <label for="profile-username" class="form-label">Username</label>
+               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="Pepe Lee">
+            </div>
+            <div class="form-control">
+               <label for="profile-name" class="form-label">Full Name</label>
+               <input id="profile-name" type="text" class="form-input" data-role="none" placeholder="Type your name" value="Peiyun Li">
+            </div>
+            <div class="form-control">
+               <label for="profile-email" class="form-label">Email</label>
+               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="pli30@art.com">
+            </div>
+         </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="password-settings-page">
+      <header data-role="header">
+         <h1>Password Settings</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" data-rel="back">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form id="password-form" data-ajax="false">
+            <div class="form-control">
+               <label for="password-oldpassword" class="form-label">Old Password</label>
+               <input id="password-oldpassword" type="text" class="form-input" data-role="none" placeholder="Type your old password">
+            </div>
+            <div class="form-control">
+               <label for="password-newpassword" class="form-label">New Password</label>
+               <input id="password-newpassword" type="text" class="form-input" data-role="none" placeholder="Type your new password">
+            </div>
+            <div class="form-control">
+               <label for="password-confirm" class="form-label">Confirm Password</label>
+               <input id="password-confirm" type="text" class="form-input" data-role="none" placeholder="Type your new password again">
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <section data-role="page" id="animal-profile-page">
+      <header data-role="header">
+         <h1>Animal Profile</h1>
+         <ul>
+            <li><a href="#" data-rel="back">&larr;</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column">
+         <div class="profile-top-bg"></div>
+         <div class="profile-top">
+            <div class="animal-profile-image"><img src="img/cat1.jpg"></div>
+            <div class="animal-profile-text">
+               <p class="animal-profile-name"><strong>Name: </strong>Andy</p>
+               <div class="animal-profile-info">
+               <p class="animal-profile-name"><strong>Type: </strong>Cat</p>
+               <p class="animal-profile-name"><strong>Tracking Times: </strong>5</p>
+               
+               
+               </div>
+
+            </div>
+         </div>
+         <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
+         
+         <div class="tabgroup">
+         <div class="tabs">
+            <!-- .tab*4>{Link $} -->
+            <div class="tab active">Map</div>
+            <div class="tab">History</div>
+            <div class="tab">Stats</div>
+         </div>
+         
+         <div class="contents">
+            <!-- .content*4>h2{Content $}+div>p*4>lorem50 -->
+            <div class="content active">
+               
+               <img src="img/icon/paw.png" class="pin-icon"> <div class="pin-text"> 100 Exchange Street</div>
+
+               
+               <div class="profilemap-container">
+                  <img src="img/profilemap.jpg">
+               </div>
+            </div>
+            <div class="content overscroll content-history">
+               <div class="content-title">Tracking Record</div>
+               <div>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi voluptatum minus quod, perferendis, dolores assumenda tempore, incidunt aliquam distinctio accusamus praesentium? Eum consequuntur asperiores beatae nulla magni natus repellendus a quis quisquam, quaerat ullam exercitationem magnam nemo necessitatibus nihil, dolores quo aliquam et autem minima veritatis ipsam fugit eaque! Unde.</p>
+                  <p>Magnam autem fuga deleniti impedit dolore animi temporibus qui commodi aperiam ratione. Blanditiis iusto illum facere sed, repellendus, nesciunt sint rem quibusdam velit sapiente aliquid sit nemo quasi voluptate ea perspiciatis quia eligendi praesentium harum! Ipsam voluptatum recusandae cumque sit illo iste velit sequi porro ducimus, necessitatibus dolore, magnam fugit!</p>
+                  <p>Ad laborum eum eius vero ullam est debitis. Ducimus praesentium quae aperiam amet ullam distinctio a similique ratione aliquid illo tempore, perspiciatis! Dolore dolor distinctio deserunt nostrum repellat nulla quae illum. Iure, ut repellendus eaque nobis, quaerat unde optio commodi quod, labore porro, numquam perferendis quam. Quas dolorum sint, laudantium.</p>
+                  <p>Vero provident error amet hic aspernatur sed delectus. Repudiandae quas, tempora atque quo dolore eos eius necessitatibus officiis quae numquam facilis minus iste? Perspiciatis ut expedita, quas veritatis laborum. Pariatur officiis nihil totam iusto doloribus ex quas expedita quidem exercitationem hic velit fugiat culpa et, architecto laudantium unde asperiores dolor.</p>
+               </div>
+            </div>
+            
+            <div class="content overscroll">
+               <div>
+                  <img src="img/stats.png">
+               </div>
+            </div>
+            
+            </div>
+        
+      </div>
+   </div>
+   </section>
+
+
+
+
+
+
+   <div class="modal" id="warning-modal">
+      <div class="modal-toast top" data-deactivate="#warning-modal">
+         <div class="message">Message</div>
+      </div>
+   </div>
+
+
+
+
+
+
+
+
+   <script type="text/template" id="footer-template">
+   <ul>
+      <li><a href="#recent-page">
+         <div class="nav-icon"><img src="img/icon/map.svg" alt=""></div>
+         
+      </a></li>
+      <li><a href="#list-page">
+         <div class="nav-icon"><img src="img/icon/list.svg" alt=""></div>
+        
+      </a></li>
+      <li><a href="#user-profile-page">
+         <div class="nav-icon"><img src="img/icon/profile.svg" alt=""></div>
+       
+      </a></li>
+   </ul>
+   </script>
+
 </body>
 </html>
