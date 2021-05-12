@@ -55,14 +55,14 @@ const makeAnimalProfile = templater(o=>`
        
         <div class="content active">
                
-            <div class="floater top right">
-            	<div class="btn-circle"><a href="#profile-add-location-page">&plus;</a></div>
-         	</div>
+            
                
             <div class="profilemap-container">
-                <img src="img/profilemap.jpg">
+                <div class="map"></div>
             </div>
-
+            <div class="floater top right">
+                <div class="btn-circle"><a href="#profile-add-location-page">&plus;</a></div>
+            </div>
         </div>
 
 
@@ -90,3 +90,24 @@ const makeAnimalProfile = templater(o=>`
 
 	
 `);
+
+const makeRecentModal = o =>`
+    <div class="modal-image">
+        <a href="#" class="js-animal-jump" data-id="${o.animal_id}"><img src="${o.img}"></a>
+    </div>
+    <div class="modal-text">
+        <p class="modal-text-title">Name</p>
+        <p>${o.name}</p>
+        <p class="modal-text-title">Type</p>
+        <p>${o.type}</p>
+        <p class="modal-text-title">Breed</p>
+        <p>${o.breed}</p>
+        <p class="modal-text-title">Tracking Date</p>
+        <p>${o.date_create}</p>
+        <p class="modal-text-title">Tracking Location</p>
+        <p>100 Exchange street, Boston, MA</p>
+        <p class="modal-text-title">Note</p>
+        <p>2 weeks after last time I saw Andy, the wound on his cheek seems to be cured. I found him this time besides the food waste bin at the street corner. The weather is getting cold, so I guess it would be easier for stay cats like him to find food not rotten yet from trash bins.</p>
+    </div>
+    
+`;

@@ -85,6 +85,14 @@ a:hover {
 
 }
 
+.map{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
 .user-photo-icon{
   width: 40vw;
   height: 40vw;
@@ -377,11 +385,8 @@ img {
    text-align:center;
    font-size:0.8em;
 }
-#recent-page [data-role='main'] {
-   background-image:url(../img/map.png);
-   background-position:center;
-   background-size:cover;
-}
+
+
 
 #add-location-page [data-role='main'] {
    background-image:url(../img/map.png);

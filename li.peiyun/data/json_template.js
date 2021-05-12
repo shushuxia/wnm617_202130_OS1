@@ -43,7 +43,7 @@
     img: function(tags){
       return 'https://via.placeholder.com/400/' +
         tags.integer(700,999) +
-        '/fff/?text=' + this.username;
+        '/fff/?text=' + this.name;
     },
     date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}' 
   }
