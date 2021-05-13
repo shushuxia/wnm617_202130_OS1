@@ -138,10 +138,18 @@ function makeStatement($data) {
                `description` = ?
               
             WHERE `id` = ?
-            ",$p,false);
-         return ["result"=>"success"];        
+             ",$p,false);
+         return ["result"=>"success"]; 
 
+//DELETE
 
+      case "delete_animal":
+         return makeQuery($c,"DELETE FROM `track_animals` WHERE `id` = ?",$p,false);       
+
+      case "delete_location":
+         return makeQuery($c,"DELETE FROM `track_locations` WHERE `id` = ?",$p,false);
+
+         
       default: return ["error"=>"No Matched type"];
    }
 }

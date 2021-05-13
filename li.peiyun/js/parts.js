@@ -131,7 +131,7 @@ const makeAnimalEditForm = templater(o=>`
     <label for="animal-edit-description" class="form-label">Description</label>
     <textarea id="animal-edit-description" class="form-box" data-role="none" placeholder="Write note about the animal">${o.description}</textarea>
 </div>
-<div class="delete-animal"><a href="#">Delete</a></div>
+<div class="js-animal-delete delete-animal" data-id="${o.id}"><a href="#">Delete</a></div>
 `);
 
 const makeUserEditForm = templater(o=>`

@@ -73,3 +73,15 @@ const checkAnimalEditForm = () => {
       window.history.back();
    })
 }
+
+const checkAnimalDelete = id => {
+   query({
+      type:'delete_animal',
+      params:[id]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.back();
+   });
+}

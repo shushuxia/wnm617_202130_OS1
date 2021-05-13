@@ -68,7 +68,10 @@ $(()=>{
       sessionStorage.animalId = $(this).data("id");
       $.mobile.navigate("#animal-profile-page");
    })
-
+   
+   .on("click",".js-animal-delete",function(e){
+      checkAnimalDelete($(this).data("id"));
+   })
 
 
 
