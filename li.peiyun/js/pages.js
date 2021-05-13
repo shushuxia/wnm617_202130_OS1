@@ -35,7 +35,8 @@ const ListPage = async() => {
  
    console.log(d)
 
-   $("#list-page .animallist").html(makeAnimalList(d.result));
+   $("#list-page .animallist")
+   .html(d.result.length?makeAnimalList(d.result):'Add an animal');
 }
 
 // User Profile Page
@@ -68,4 +69,23 @@ const AnimalProfilePage = async() => {
          makeMarkers(map_el,d.result);
       })
    })
+} 
+
+
+const AnimalEditPage = async() => {
+    let d = await query({type:'animal_by_id',
+      params:[sessionStorage.animalId]});
+  
+   console.log(d)
+
+   $("#animal-edit-page #animal-edit-form").html(makeAnimalEditForm(d.result));
+} 
+
+const ProfileSettingsPage = async() => {
+    let d = await query({type:'user_by_id',
+      params:[sessionStorage.userId]});
+  
+   console.log(d)
+
+   $("#profile-settings-page #user-edit-form").html(makeUserEditForm(d.result));
 } 

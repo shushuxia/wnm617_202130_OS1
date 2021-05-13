@@ -91,6 +91,57 @@ function makeStatement($data) {
             WHERE user_id = ?
             GROUP BY l.animal_id",$p);
 
+
+
+//CRUD
+   //INSERT
+      case "insert_user":
+         $r = makeQuery($c,"SELECT * FROM `track_users` WHERE `username` = ? OR `email` = ?",[$p[0],$p[1]]);
+         if(count($r['result'])) return ['error'=>"Username or Email already exists"];
+
+         $r = makeQuery($c,"INSERT INTO
+            `track_users`
+            (`name`,`username`,`email`,`password`,`img`,`date_create`)
+            VALUES
+            ('',?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
+
+      case "insert_animal":
+         $r = makeQuery($c,"INSERT INTO
+            `track_animals`
+            (`user_id`,`name`,`type`,`breed`,`description`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=ANIMAL', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()]; 
+
+   //UPDATE
+      case "update_user":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+               `username` = ?,
+               `name` = ?,
+               `email` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
+      case "update_animal":
+         $r = makeQuery($c,"UPDATE
+            `track_animals`
+            SET
+               `name` = ?,
+               `type` = ?,
+               `breed` = ?,
+               `description` = ?
+              
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];        
+
+
       default: return ["error"=>"No Matched type"];
    }
 }

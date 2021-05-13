@@ -12,6 +12,7 @@
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
    <script src="js/function.js"></script>
+   <script src="js/forms.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
@@ -61,15 +62,19 @@
                <input id="signup-username" type="text" class="form-input-cell" data-role="none" placeholder="Type your username">
             </div>
             <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input id="signup-email" type="text" class="form-input-cell" data-role="none" placeholder="Type your email">
+            </div>
+            <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
                <input id="signup-password" type="password" class="form-input-cell" data-role="none" placeholder="Type your password">
             </div>
             <div class="form-control">
                <label for="signup-password-confirm" class="form-label">Confirm Password</label>
-               <input id="signup-password-confirm" type="password" class="form-input-cell" data-role="none" placeholder="Type your password">
+               <input id="signup-password-confirm" type="password" class="form-input-cell" data-role="none" placeholder="Retype your password">
             </div>
             <div class="form-control">
-               <a href="#recent-page" class="form-button-cell">Sign Up</a>
+               <input type="submit" class="form-button-cell" value="Sign Up" data-role="none">
             </div>
             <div class="form-control signin-alt">
                Already have an account?
@@ -334,7 +339,7 @@
          <h1>Tracked Animals</h1>
          <ul>
             <li class="flex-stretch"></li>
-            <li><a href="#add-page">&plus;</a></li>
+            <li><a href="#animal-add-page">&plus;</a></li>
          </ul>
       </header>
 
@@ -358,36 +363,51 @@
 
    </section>
 
-<!--LIST ADD PAGE-->
-   <section data-role="page" id="add-page">
+<!--ANIMAL ADD PAGE-->
+   <section data-role="page" id="animal-add-page">
       <header data-role="header">
          <h1>Add New Animal</h1>
          <ul>
             
             <li><a href="#" data-rel="back">&larr;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="js-animal-add">Save</a></li>
          
          </ul>
       </header>
 
-      <div class="animal-add-icon"></div>
+      
 
-      <div class="form-control">
-        <label for="list-add-name" class="form-label">Name</label>
-        <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
-      </div>
-      <div class="form-control">
-        <label for="list-add-type" class="form-label">Type</label>
-        <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
-      </div>
-
+      <div data-role="main" class="display-flex flex-column">
+      <form id="animal-add-form" data-ajax="false">
+      <input type="hidden" id="animal-add-destination" value="#list-page">
+        <div class="animal-add-icon"></div>
+        <div class="form-control">
+          <label for="animal-add-name" class="form-label">Name</label>
+          <input id="animal-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
+        </div>
+        <div class="form-control">
+          <label for="animal-add-type" class="form-label">Type</label>
+          <input id="animal-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+        </div>
+        <div class="form-control">
+          <label for="animal-add-breed" class="form-label">Breed</label>
+          <input id="animal-add-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed">
+        </div>
+        <div class="form-control">
+          <label for="animal-add-description" class="form-label">Description</label>
+          <textarea id="animal-add-description" class="form-box" data-role="none" placeholder="Type animal description"></textarea>
+        </div>
       <a href="#location-description-page">
       <div class ="pin-container">
         <img src="img/icon/map.svg" class="pin-icon"> 
           <div class="pin-text"> Add Location</div>
       </div>
-  	  </a>
+      </a>
+      </form>
+      </div>
+
+      
       
 
    </section>
@@ -399,7 +419,7 @@
          <ul>
             <li><a href="#" data-rel="back">&larr;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#edit-animal-page">Edit</a></li>
+            <li><a href="#animal-edit-page">Edit</a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -410,31 +430,22 @@
    </section>
 
 <!--EDIT ANIMAL PROFILE PAGE-->
-   <section data-role="page" id="edit-animal-page">
+   <section data-role="page" id="animal-edit-page">
       <header data-role="header">
          <h1>Animal Profile</h1>
          <ul>
             
             <li><a href="#" data-rel="back">&larr;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="js-animal-edit">Save</a></li>
          
          </ul>
       </header>
 
-      <div class="animal-edit-icon"><img src="img/cat1.jpg"></div>
-
-      <div class="form-control">
-        <label for="list-edit-name" class="form-label">Name</label>
-        <input id="list-edit-name" type="text" class="form-input" data-role="none" placeholder="Type animal name" value="Andy">
+      <div data-role="main">
+      <form id="animal-edit-form" data-ajax="false"></form>
       </div>
-      <div class="form-control">
-        <label for="list-edit-type" class="form-label">Type</label>
-        <input id="list-edit-type" type="text" class="form-input" data-role="none" placeholder="Type animal type" value="Cat">
-      </div>
-      <div class="delete-animal"><a href="#">Delete</a></div>
-
-
+ 
    </section>
 
 
@@ -475,28 +486,15 @@
          <ul>
             <li><a href="#" data-rel="back">&larr;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="js-user-edit">Save</a></li>
          </ul>
       </header>
 
-      <div class="user-photo-icon"><img src="img/userphoto.jpg" alt=""></div>
-
       <div data-role="main">
-         <form id="profile-form" data-ajax="false">
-            <div class="form-control">
-               <label for="profile-username" class="form-label">Username</label>
-               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="Pepe Lee">
-            </div>
-            <div class="form-control">
-               <label for="profile-name" class="form-label">Full Name</label>
-               <input id="profile-name" type="text" class="form-input" data-role="none" placeholder="Type your name" value="Peiyun Li">
-            </div>
-            <div class="form-control">
-               <label for="profile-email" class="form-label">Email</label>
-               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="pli30@art.com">
-            </div>
-         </form>
+      <form id="user-edit-form" data-ajax="false"></form>
       </div>
+
+      
    </section>
 
 <!--PASSWORD SETTING PAGE-->

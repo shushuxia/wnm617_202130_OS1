@@ -111,3 +111,43 @@ const makeRecentModal = o =>`
     </div>
     
 `;
+
+const makeAnimalEditForm = templater(o=>`
+<div class="animal-edit-icon"><img src="${o.img}"></div>
+
+<div class="form-control">
+    <label for="animal-edit-name" class="form-label">Name</label>
+    <input id="animal-edit-name" type="text" class="form-input" data-role="none" placeholder="Type animal name" value=${o.name}>
+</div>
+<div class="form-control">
+    <label for="animal-edit-type" class="form-label">Type</label>
+    <input id="animal-edit-type" type="text" class="form-input" data-role="none" placeholder="Type animal type" value="${o.type}">
+</div>
+<div class="form-control">
+    <label for="animal-edit-breed" class="form-label">Type</label>
+    <input id="animal-edit-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed" value="${o.breed}">
+</div>
+<div class="form-control">
+    <label for="animal-edit-description" class="form-label">Description</label>
+    <textarea id="animal-edit-description" class="form-box" data-role="none" placeholder="Write note about the animal">${o.description}</textarea>
+</div>
+<div class="delete-animal"><a href="#">Delete</a></div>
+`);
+
+const makeUserEditForm = templater(o=>`
+<div class="user-photo-icon"><img src="${o.img}" alt=""></div>
+
+<div class="form-control">
+    <label for="user-edit-username" class="form-label">Username</label>
+    <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="${o.username}">
+</div>
+<div class="form-control">
+    <label for="user-edit-name" class="form-label">Full Name</label>
+    <input id="user-edit-name" type="text" class="form-input" data-role="none" placeholder="Type your name" value="${o.name}">
+</div>
+<div class="form-control">
+    <label for="user-edit-email" class="form-label">Email</label>
+    <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="${o.email}">
+</div>
+
+`);
