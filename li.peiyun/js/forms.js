@@ -85,3 +85,20 @@ const checkAnimalDelete = id => {
       window.history.back();
    });
 }
+
+const checkLocationAddForm = () => {
+   let lat = $("#location-add-lat").val();
+   let lng = $("#location-add-lng").val();
+   let journal = $("#location-add-description").val();
+
+   query({
+      type:'insert_location',
+      params:[sessionStorage.animalId,lat,lng,journal]})
+   .then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      $("#location-add-form")[0].reset();
+      window.history.go(-2);
+   })
+}

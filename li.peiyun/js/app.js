@@ -16,12 +16,15 @@ $(()=>{
       switch(ui.toPage[0].id) {
          case 'recent-page': RecentPage(); break;
          case 'list-page': ListPage(); break;
-         case 'user-profile-page': UserProfilePage(); break;
+
+         
          case 'animal-profile-page': AnimalProfilePage(); break;
          case 'animal-edit-page': AnimalEditPage(); break;
+         
+         case 'user-profile-page': UserProfilePage(); break;
          case 'profile-settings-page': ProfileSettingsPage(); break;
 
-
+         case 'location-add-page': AddLocationPage(); break;
       }
    })
 
@@ -54,6 +57,9 @@ $(()=>{
    .on("click",".js-user-edit",function(e){
       checkUserEditForm();
    })
+   .on("click",".js-location-add",function(e){
+      checkLocationAddForm();
+   })
 
 
 
@@ -68,7 +74,7 @@ $(()=>{
       sessionStorage.animalId = $(this).data("id");
       $.mobile.navigate("#animal-profile-page");
    })
-   
+
    .on("click",".js-animal-delete",function(e){
       checkAnimalDelete($(this).data("id"));
    })

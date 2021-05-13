@@ -61,7 +61,7 @@ const makeAnimalProfile = templater(o=>`
                 <div class="map"></div>
             </div>
             <div class="floater top right">
-                <div class="btn-circle"><a href="#profile-add-location-page">&plus;</a></div>
+                <div class="btn-circle"><a href="#location-add-page">&plus;</a></div>
             </div>
         </div>
 

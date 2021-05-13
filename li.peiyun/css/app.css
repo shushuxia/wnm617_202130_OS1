@@ -388,11 +388,7 @@ img {
 
 
 
-#add-location-page [data-role='main'] {
-   background-image:url(../img/map.png);
-   background-position:center;
-   background-size:cover;
-}
+
 
 #profile-add-location-page [data-role='main'] {
    background-image:url(../img/map.png);

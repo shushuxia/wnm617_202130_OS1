@@ -89,3 +89,31 @@ const ProfileSettingsPage = async() => {
 
    $("#profile-settings-page #user-edit-form").html(makeUserEditForm(d.result));
 } 
+
+
+const AddLocationPage = async() => {
+   let map_el = await makeMap("#location-add-page .map");
+   makeMarkers(map_el,[]);
+
+   let map = map_el.data("map");
+
+   map.addListener("click",function(e){
+      console.log(e, map.getCenter())
+
+      let posFromClick = {
+         lat:e.latLng.lat(),
+         lng:e.latLng.lng(),
+         icon:"img/icon/paw.png"
+      };
+      let posFromCenter = {
+         lat:map.getCenter().lat(),
+         lng:map.getCenter().lng(),
+         icon:"img/icon/paw.png"
+      };
+
+      $("#location-add-lat").val(posFromClick.lat)
+      $("#location-add-lng").val(posFromClick.lng)
+
+      makeMarkers(map_el,[posFromClick])
+   })
+}

@@ -116,6 +116,15 @@ function makeStatement($data) {
             ",$p,false);
          return ["id"=>$c->lastInsertId()]; 
 
+      case "insert_location":
+         $r = makeQuery($c,"INSERT INTO
+            `track_locations`
+            (`animal_id`,`lat`,`lng`,`journal`,`photo`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
+
    //UPDATE
       case "update_user":
          $r = makeQuery($c,"UPDATE
@@ -149,7 +158,7 @@ function makeStatement($data) {
       case "delete_location":
          return makeQuery($c,"DELETE FROM `track_locations` WHERE `id` = ?",$p,false);
 
-         
+
       default: return ["error"=>"No Matched type"];
    }
 }
