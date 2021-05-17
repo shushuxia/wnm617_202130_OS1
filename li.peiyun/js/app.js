@@ -82,6 +82,18 @@ $(()=>{
       checkListFilter($(this).data());
    })
 
+   .on("click",".js-user-upload",function(e){
+      checkUserUpload();
+   })
+
+   .on("change",".image-uploader input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         makeUploaderImage(this,d.result,'uploads/')
+      })
+   })
+
 
 
 

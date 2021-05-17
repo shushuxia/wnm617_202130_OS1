@@ -366,8 +366,32 @@
       <form id="user-edit-form" data-ajax="false"></form>
       </div>
 
+      <a href="#user-upload-page">Upload Photo</a>
+
       
    </section>
+
+<!--USER UPLOAD PAGE-->
+   <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Choose Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload">Save</a></li>
+         </ul>
+
+      </header>
+      <div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+      </div>
+   </section>
+
 
 <!--PASSWORD SETTING PAGE-->
    <section data-role="page" id="password-settings-page">

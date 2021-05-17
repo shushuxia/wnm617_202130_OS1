@@ -170,3 +170,9 @@ const makeFilterList = (animals) => {
    ${filterList(animals,'breed')} 
    `;
 }
+
+
+const makeUploaderImage = (el,name,folder='') => {
+   $(el).parent().css({'background-image':`url('${folder+name}')`}).addClass("picked")
+      .prev().val(folder+name)
+}
