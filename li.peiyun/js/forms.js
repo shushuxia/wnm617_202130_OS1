@@ -102,3 +102,14 @@ const checkLocationAddForm = () => {
       window.history.go(-2);
    })
 }
+
+const checkSearchForm = async () => {
+   let s = $("#list-search-input").val();
+   console.log(s)
+
+   let r = await query({type:"search_animals",params:[s,sessionStorage.userId]});
+
+   drawAnimalList(r.result,'No results found');
+
+   console.log(r)
+}

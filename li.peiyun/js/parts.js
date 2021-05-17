@@ -1,3 +1,8 @@
+const drawAnimalList = (a,empty_phrase='Hey Dummy, add an animal.') => {
+   $("#list-page .animallist")
+      .html(a.length?makeAnimalList(a):empty_phrase);
+}
+
 const makeAnimalList = templater(o=>`
 <div class="animallist-item js-animal-jump" data-id="${o.id}">
     <div class="animallist-image">

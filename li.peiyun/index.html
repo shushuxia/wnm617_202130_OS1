@@ -193,10 +193,13 @@
    <section data-role="page" id="list-page">
 
       <header data-role="header">
-         <h1>Tracked Animals</h1>
+        
          <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#animal-add-page">&plus;</a></li>
+            <li class="flex-stretch list-search">
+              <form class="hotdog" id="list-search-form" data-ajax="false">
+                <input type="search" id="list-search-input" data-role="none" placeholder="Search">
+              </form>
+            </li>
          </ul>
       </header>
 
@@ -209,10 +212,11 @@
       </div>
 
       <div data-role="main">
-         <div class="overscroll">
-            <div class="animallist">
-               
-            </div>
+        <div class="overscroll">
+          <div class="animallist"></div>
+        </div>
+        <div class="floater bottom right">
+          <div class="btn-circle"><a href="#animal-add-page">&plus;</a></div>
          </div>
       </div>
 

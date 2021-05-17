@@ -91,6 +91,15 @@ function makeStatement($data) {
             WHERE user_id = ?
             GROUP BY l.animal_id",$p);
 
+      case "search_animals":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_animals`
+            WHERE
+               `name` LIKE ?
+               AND user_id = ?
+            ",$p);
+
 
 
 //CRUD
