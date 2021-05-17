@@ -156,3 +156,17 @@ const makeUserEditForm = templater(o=>`
 </div>
 
 `);
+
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <div class="filter" data-field="type" data-value="all">All</div> | 
+   ${filterList(animals,'type')} | 
+   ${filterList(animals,'breed')} 
+   `;
+}

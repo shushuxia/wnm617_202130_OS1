@@ -113,3 +113,18 @@ const checkSearchForm = async () => {
 
    console.log(r)
 }
+
+const checkListFilter = async (d) => {
+   let r = d.value=='all' ?
+      await query({
+         type:'animals_by_user_id',
+         params:[sessionStorage.userId]
+      }) :
+      await query({
+         type:'animal_filter',
+         params:[d.field,d.value,sessionStorage.userId]
+      });
+
+   console.log(r)
+   drawAnimalList(r.result,'No results found');
+}

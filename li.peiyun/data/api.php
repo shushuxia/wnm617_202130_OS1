@@ -100,6 +100,30 @@ function makeStatement($data) {
                AND user_id = ?
             ",$p);
 
+      case "animal_search_recent":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_animals` a
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.animal_id
+            WHERE 
+               a.name LIKE ?
+               AND a.user_id = ?
+            GROUP BY l.animal_id
+            ",$p);
+
+      case "animal_filter":
+         return makeQuery($c,"SELECT * FROM
+            `track_animals`
+            WHERE
+               `$p[0]` = ?
+               AND user_id = ?
+            ",[$p[1],$p[2]]);
+
+
 
 
 //CRUD

@@ -45,7 +45,6 @@ $(()=>{
       checkSearchForm();
    })
 
-
    /* FORM SUBMIT BY BUTTON */
 
    .on("click",".js-animal-add",function(e){
@@ -77,6 +76,10 @@ $(()=>{
 
    .on("click",".js-animal-delete",function(e){
       checkAnimalDelete($(this).data("id"));
+   })
+
+   .on("click",".filter",function(e){
+      checkListFilter($(this).data());
    })
 
 

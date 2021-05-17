@@ -85,6 +85,16 @@ a:hover {
 
 }
 
+.filter-list {
+    display: flex;
+    overflow: auto;
+}
+.filter {
+    padding: 0px 0.5em;
+    font-weight:bold;
+    color: var(--color-neutral-dark);
+}
+
 .list-search {
    padding:0.4em 0.5em;
    display: flex;
@@ -526,28 +536,6 @@ img {
 
 #list-page, #existed-animal-page {
   background-color: var(--color-neutral-dark);
-}
-
-.filter{
-  display: inline-flex;
-  color:var(--color-neutral-light);
-  padding: 0.2em 1em;
-  margin: 0.2em 0;
-  border: 2px solid var(--color-neutral-light);
-  border-radius: 1em;
-}
-
-.sort{
-  display: inline-flex;
-}
-
-.search, .sort{
-  display: inline-flex;
-  height: 2rem;
-  width: 2rem;
-}
-.search img, .sort img{
-  width: 100%;
 }
 
 

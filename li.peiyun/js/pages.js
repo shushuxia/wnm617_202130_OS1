@@ -32,6 +32,8 @@ const RecentPage = async() => {
 const ListPage = async() => {
    let d = await query({type:'animals_by_user_id',
    	params:[sessionStorage.userId]});
+
+   $("#list-page .filter-list").html(makeFilterList(d.result))
  
    console.log(d)
 

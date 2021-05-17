@@ -100,6 +100,13 @@
          <div class="floater bottom right">
             <div class="btn-circle"><a href="#location-add-page">&plus;</a></div>
          </div>
+<!--
+         <div class="floater top left" style="width:100%;padding:1em">
+            <form data-ajax="false" id="recent-search-form" class="hotdog">
+               <input type="search" id="recent-search-input" data-role="none" placeholder="Search">
+            </form>
+         </div>
+-->
 
          <div class="modal" id="recent-profile-modal">
             <div class="modal-back" data-deactivate="#recent-profile-modal"></div>
@@ -203,13 +210,17 @@
          </ul>
       </header>
 
-      <div class="filter-container display-flex">
+<!--      <div class="filter-container display-flex">
          <div class="filter">All</div>
          <div clsss="display-flex flex-justify-right">
             <div class="sort"><a><img src="img/icon/sort.svg"></a></div>
             <div class="search"><a><img src="img/icon/search.svg"></a></div>
          </div>
       </div>
+-->
+      <header data-role="header">
+         <div class="filter-list"></div>
+      </header>
 
       <div data-role="main">
         <div class="overscroll">
