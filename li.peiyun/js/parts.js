@@ -118,7 +118,12 @@ const makeRecentModal = o =>`
 `;
 
 const makeAnimalEditForm = templater(o=>`
-<div class="animal-edit-icon"><img src="${o.img}"></div>
+<div>
+   <input type="hidden" id="animal-edit-image" value="${o.img}">
+   <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+      <input type="file" data-role="none" id="animal-edit-upload">
+   </label>
+</div>
 
 <div class="form-control">
     <label for="animal-edit-name" class="form-label">Name</label>

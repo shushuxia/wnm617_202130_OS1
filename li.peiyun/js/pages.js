@@ -51,6 +51,17 @@ const UserProfilePage = async() => {
    $("#user-profile-page .user-profile").html(makeUserProfile(d.result));
 } 
 
+const UserUploadPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+
+      makeUploaderImage($("#user-upload-input"),d.result[0].img)
+   });
+}
+
 // Animal Profile Page
 const AnimalProfilePage = async() => {
     query({

@@ -23,6 +23,7 @@ $(()=>{
          
          case 'user-profile-page': UserProfilePage(); break;
          case 'profile-settings-page': ProfileSettingsPage(); break;
+         case 'user-upload-page': UserUploadPage(); break;
 
          case 'location-add-page': AddLocationPage(); break;
       }

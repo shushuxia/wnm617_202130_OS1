@@ -92,13 +92,11 @@ a:hover {
    left:0;
    width:100%;
    height:100%;
-
+  margin:0;
    background-size:contain;
    background-repeat:no-repeat;
 }
-.ui-mobile label.image-uploader {
-   margin:0;
-}
+
 .image-uploader input {
    display:none;
 }
@@ -106,17 +104,20 @@ a:hover {
 .image-uploader.thumbnail {
     width: 5em;
     height: 5em;
+    margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
     border-radius: 0.5em;
     background-position: center;
     background-size: cover;
     position:relative;
 }
 .image-uploader.thumbnail:not(.picked){
-  border:2px solid var(--color-neutral-light);
+  border:2px solid var(--color-neutral-dark);
 }
 /* This will add the floating plus symbol to the imagepicker */
 .image-uploader.thumbnail:before {
-  color:black;
+  color:var(--color-neutral-dark);
   content:'+';
   position:absolute;
   font-size:3em;
