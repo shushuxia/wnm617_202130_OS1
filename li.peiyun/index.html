@@ -173,14 +173,16 @@
          </ul>
      </header>
      <div data-role="main" class="display-flex flex-column">
-     	<div class="location-description-top">
-     	<div class="location-description-pin">
-            <img src="img/pin.png">
-         </div>
-     	</div>
+
      	<div class="location-description-bottom">
 
       <form id="location-add-form" data-ajax="false">
+               <div>
+                  <input type="hidden" id="location-add-image">
+                  <label class="image-uploader thumbnail">
+                     <input type="file" data-role="none" id="location-add-upload">
+                  </label>
+               </div>
 	     
 	      <div class="form-control">
 	        <label for="location-add-description" class="form-label">Note</label>
