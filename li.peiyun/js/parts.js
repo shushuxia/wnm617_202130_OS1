@@ -1,7 +1,23 @@
-const drawAnimalList = (a,empty_phrase='Hey Dummy, add an animal.') => {
+const drawAnimalList = (a) => {
    $("#list-page .animallist")
-      .html(a.length?makeAnimalList(a):empty_phrase);
+      .html(a.length?makeAnimalList(a):showEmptyMessage);
 }
+
+const showEmptyMessage = templater(o=>`
+<img class="emoji" src="img/qiche.gif">
+<div class="search-empty">
+    Opps, no animal found.
+</div>
+`);
+
+const showAddGuide = templater(o=>`
+<div class="add-guide">
+You havn't tracked any animal yet.<br/>
+  Start to track your animal!
+  <img class="draw-next" src="img/icon/drawnext.png">
+</div>
+`);
+
 
 const makeAnimalList = templater(o=>`
 <div class="animallist-item js-animal-jump" data-id="${o.id}">
@@ -11,7 +27,7 @@ const makeAnimalList = templater(o=>`
     <div class="animallist-description">
         <div class="animallist-name"><strong>Name: </strong>${o.name}</div>
         <div class="animallist-type"><strong>Type: </strong> ${o.type}</div>
-        <div class="animallist-time"><strong>Last Time Saw: </strong> 1 day ago</div>
+        <div class="animallist-time"><strong>Breed: </strong> ${o.breed}</div>
     </div>
 </div>  
 `);

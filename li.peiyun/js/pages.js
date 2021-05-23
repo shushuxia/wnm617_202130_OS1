@@ -38,7 +38,7 @@ const ListPage = async() => {
    console.log(d)
 
    $("#list-page .animallist")
-   .html(d.result.length?makeAnimalList(d.result):'Add an animal');
+   .html(d.result.length?makeAnimalList(d.result):showAddGuide);
 }
 
 // User Profile Page
