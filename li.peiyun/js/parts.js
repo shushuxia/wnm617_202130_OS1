@@ -42,55 +42,14 @@ const makeAnimalProfile = templater(o=>`
             <p class="animal-profile-name"><strong>Name: </strong>${o.name}</p>
             <div class="animal-profile-info">
                 <p class="animal-profile-name"><strong>Type: </strong>${o.type}</p>
-                <p class="animal-profile-name"><strong>Tracking Times: </strong>5</p>
+                <p class="animal-profile-name"><strong>Breed: </strong>${o.breed}</p>
         	</div>
     	</div>
     </div>
-
-    <div class="profile-bottom" style="flex:1;position:relative;overflow:hidden">
-         
-    <div class="tabgroup">
-        <div class="tabs">
-            <div class="tab active">Map</div>
-            <div class="tab">History</div>
-            <div class="tab">Stats</div>
-        </div>
-         
-        <div class="contents">
-       
-        <div class="content active">
-               
-            
-               
-            <div class="profilemap-container">
-                <div class="map"></div>
-            </div>
-            <div class="floater top right">
-                <div class="btn-circle"><a href="#location-add-page">&plus;</a></div>
-            </div>
-        </div>
-
-
-        <div class="content overscroll content-history">
-            <div class="content-title">Tracking Record</div>
-            <div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi voluptatum minus quod, perferendis, dolores assumenda tempore, incidunt aliquam distinctio accusamus praesentium? Eum consequuntur asperiores beatae nulla magni natus repellendus a quis quisquam, quaerat ullam exercitationem magnam nemo necessitatibus nihil, dolores quo aliquam et autem minima veritatis ipsam fugit eaque! Unde.</p>
-                <p>Magnam autem fuga deleniti impedit dolore animi temporibus qui commodi aperiam ratione. Blanditiis iusto illum facere sed, repellendus, nesciunt sint rem quibusdam velit sapiente aliquid sit nemo quasi voluptate ea perspiciatis quia eligendi praesentium harum! Ipsam voluptatum recusandae cumque sit illo iste velit sequi porro ducimus, necessitatibus dolore, magnam fugit!</p>
-                <p>Ad laborum eum eius vero ullam est debitis. Ducimus praesentium quae aperiam amet ullam distinctio a similique ratione aliquid illo tempore, perspiciatis! Dolore dolor distinctio deserunt nostrum repellat nulla quae illum. Iure, ut repellendus eaque nobis, quaerat unde optio commodi quod, labore porro, numquam perferendis quam. Quas dolorum sint, laudantium.</p>
-                <p>Vero provident error amet hic aspernatur sed delectus. Repudiandae quas, tempora atque quo dolore eos eius necessitatibus officiis quae numquam facilis minus iste? Perspiciatis ut expedita, quas veritatis laborum. Pariatur officiis nihil totam iusto doloribus ex quas expedita quidem exercitationem hic velit fugiat culpa et, architecto laudantium unde asperiores dolor.</p>
-            </div>
-        </div>
-            
-        <div class="content overscroll">
-            <div>
-                <img src="img/stats.png">
-            </div>
-        </div>
-            
-        </div>     
    
-	</div>
-	</div>
+    <div class="profile-description">
+        <strong>Description: </strong>${o.description}
+    </div>
 
 
 	
@@ -145,7 +104,8 @@ const makeAnimalEditForm = templater(o=>`
 `);
 
 const makeUserEditForm = templater(o=>`
-<div class="user-photo-icon"><img src="${o.img}" alt=""></div>
+<a href="#user-upload-page"><div class="user-photo-icon"><img src="${o.img}" alt=""></div>
+</a>
 
 <div class="form-control">
     <label for="user-edit-username" class="form-label">Username</label>
