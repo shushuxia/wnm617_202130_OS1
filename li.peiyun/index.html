@@ -98,7 +98,7 @@
          
       
          <div class="floater bottom right">
-            <div class="btn-circle"><a href="#location-add-page">&plus;</a></div>
+            <div class="btn-circle"><a href="#choose-animal-page" class="js-add-from-recent">&plus;</a></div>
          </div>
 <!--
          <div class="floater top left" style="width:100%;padding:1em">
@@ -121,6 +121,33 @@
 
       <footer data-role="footer" data-template="#footer-template"></footer>
       
+   </section>
+
+<!--CHOOSE ANIMAL PAGE-->
+   <section data-role="page" id="choose-animal-page">
+      <header data-role="header">
+         <h1>Choose Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#location-add-page">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="overscroll">
+            <form style="padding:1em">
+               <div>
+                  <a href="#animal-add-page" class="form-button">Create New Animal</a>
+               </div>
+               <p style="text-align:center">Or Choose One Below</p>
+               <div class="animal-choices">
+                  <div class='form-select'>
+                     <select id="location-choose-animal" data-role="none"></select>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
    </section>
 
 <!--ADD LOCATION PAGE-->
@@ -177,16 +204,17 @@
       <div class="location-description-bottom">
 
       <form id="location-add-form" data-ajax="false">
-               <div>
-                  <input type="hidden" id="location-add-image">
-                  <label class="image-uploader thumbnail">
-                     <input type="file" data-role="none" id="location-add-upload">
-                  </label>
-               </div>
+        <input type="hidden" id="location-redirect">
+        <div>
+          <input type="hidden" id="location-add-image">
+          <label class="image-uploader thumbnail">
+            <input type="file" data-role="none" id="location-add-upload">
+          </label>
+        </div>
        
         <div class="form-control">
-          <label for="location-add-description" class="form-label">Note</label>
-          <textarea id="location-add-description" class="form-box" data-role="none" placeholder="Write note about the animal"></textarea>
+          <label for="location-add-description" class="form-label">Journal</label>
+          <textarea id="location-add-description" class="form-box" data-role="none" placeholder="Write journal about the animal"></textarea>
         </div>
       </form>
       
@@ -255,7 +283,7 @@
       <div data-role="main" class="display-flex flex-column">
       <form id="animal-add-form" data-ajax="false">
       <input type="hidden" id="animal-add-destination" value="#list-page">
-
+      <input type='hidden' id='animal-add-location'>
         <div>
           <input type="hidden" id="animal-add-image">
           <label class="image-uploader thumbnail">
@@ -292,9 +320,9 @@
       <header data-role="header">
          <h1>Animal Profile</h1>
          <ul>
-            <li><a href="#" data-rel="back">&larr;</a></li>
+            <li><a href="#list-page">&larr;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#animal-edit-page">Edit</a></li>
+            <li><a href="#" data-rel="back">Edit</a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -307,7 +335,7 @@
                 <div class="map"></div>
            
             <div class="floater bottom right" style="padding-bottom: 1em">
-                <div class="btn-circle"><a href="#location-add-page">&plus;</a></div>
+                <div class="btn-circle"><a href="#location-add-page" class="js-choose-animal">&plus;</a></div>
             </div>
             
         </div>     

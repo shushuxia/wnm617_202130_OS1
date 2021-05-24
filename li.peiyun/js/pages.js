@@ -104,6 +104,16 @@ const ProfileSettingsPage = async() => {
 } 
 
 
+const ChooseAnimalPage = async () => {
+   let d = await query({
+      type:'animals_by_user_id',
+      params:[sessionStorage.userId]
+   });
+
+   $("#location-choose-animal")
+      .html(FormSelectOptions(d.result))
+}
+
 const AddLocationPage = async() => {
    let map_el = await makeMap("#location-add-page .map");
    makeMarkers(map_el,[]);

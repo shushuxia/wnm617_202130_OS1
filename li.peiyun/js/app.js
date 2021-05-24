@@ -25,6 +25,7 @@ $(()=>{
          case 'profile-settings-page': ProfileSettingsPage(); break;
          case 'user-upload-page': UserUploadPage(); break;
 
+         case 'choose-animal-page': ChooseAnimalPage(); break;
          case 'location-add-page': AddLocationPage(); break;
       }
    })
@@ -59,6 +60,14 @@ $(()=>{
    })
    .on("click",".js-location-add",function(e){
       checkLocationAddForm();
+   })
+   .on("click",".js-choose-animal",function(e){
+      $("#location-choose-animal")
+         .html(FormSelectOptions([{id:sessionStorage.animalId,name:"chosen"}]))
+      $("#location-redirect").val(-2);
+   })
+   .on("click",".js-add-from-recent",function(e){
+      $("#location-redirect").val(-3);
    })
 
 

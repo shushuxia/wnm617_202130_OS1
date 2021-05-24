@@ -54,7 +54,7 @@ const checkAnimalAddForm = () => {
       $("#animal-add-form")[0].reset();
 
       sessionStorage.animalId = d.id;
-      $.mobile.navigate($("#animal-add-destination").val());
+      window.history.go(-1);
    })
 }
 
@@ -84,25 +84,25 @@ const checkAnimalDelete = id => {
       if(d.error) {
          throw d.error;
       }
-      window.history.back();
+      $.mobile.navigate("#list-page");
    });
 }
 
 const checkLocationAddForm = () => {
-   let lat = $("#location-add-lat").val();
-   let lng = $("#location-add-lng").val();
+   let animal_id = $("#location-choose-animal").val();
+   let lat = +$("#location-add-lat").val();
+   let lng = +$("#location-add-lng").val();
    let journal = $("#location-add-description").val();
    let icon = $("#location-add-image").val();
 
    query({
-      type:'insert_location',
-      params:[sessionStorage.animalId,lat,lng,journal,icon]})
-   .then(d=>{
+      type:"insert_location",
+      params:[animal_id,lat,lng,journal,icon]
+   }).then(d=>{
       if(d.error) {
          throw d.error;
       }
-      $("#location-add-form")[0].reset();
-      window.history.go(-2);
+    window.history.go(+$("#location-redirect").val());
    })
 }
 

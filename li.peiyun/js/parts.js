@@ -152,3 +152,17 @@ const makeUploaderImage = (el,name,folder='') => {
    $(el).parent().css({'background-image':`url('${folder+name}')`}).addClass("picked")
       .prev().val(folder+name)
 }
+
+const FormSelectOptions = (options,selected=1) => {
+   return options.reduce((r,o)=>{
+      return r+`<option value="${o.id}" ${o.id===selected?'selected':''}>${o.name}</option>`
+   },'');
+}
+
+const FormSelect = (options,id,selected=1) => {
+   return `<div class='form-select'>
+      <select id="${id}">
+         ${FormSelectOptions(options,selected)}
+      </select>
+   </div>`;
+}
