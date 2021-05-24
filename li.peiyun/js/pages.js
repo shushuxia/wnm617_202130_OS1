@@ -48,8 +48,17 @@ const UserProfilePage = async() => {
   
    console.log(d)
 
-   $("#user-profile-page .user-profile").html(makeUserProfile(d.result));
+   $("#user-profile-page .user-profile-user").html(makeUserProfile(d.result));
+
+   let a = await query({type:'animals_by_user_id',
+      params:[sessionStorage.userId]});
+  
+   console.log(a)
+
+$("#user-profile-page .user-profile-animal").html(makeUserProfileAnimal(a.result));
+
 } 
+
 
 const UserUploadPage = async() => {
    query({

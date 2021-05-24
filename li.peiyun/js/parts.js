@@ -40,14 +40,22 @@ const makeUserProfile = templater(o=>`
          
     <div class="profile-body">
         <div class="profile-name">${o.name}</div>
-        <p> Recorded <span class="keyword">21</span> trackings in total.</p>
-        <p> Tracked <span class="keyword">6</span> animals in total.</p>
-        <p> Favorite catogory to track is <span class="keyword">cat</span>.</p>
-        <p> Favorite animal to track is <span class="keyword">Andy</span>.</p>
+        <p> <strong>Username: </strong>${o.username}</p> 
+        <p> <strong>Email:</strong>${o.email}</p>
     </div>
     <div class="setting"><a href="#settings-page">
       <img src="img/icon/setting.svg" alt=""></a></div>
 `);
+
+const makeUserProfileAnimal = templater(o=>`
+<div class="user-profile-animal-item">
+        <img src="${o.img}" alt="">
+</div>
+
+
+`);
+
+
 
 const makeAnimalProfile = templater(o=>`
   

@@ -424,6 +424,20 @@ z-index:  10;
     text-align: center;
 }
 
+.select-button{
+    display: inline-block;
+    width: 100%;
+    border-width: 0;
+    background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-light);
+    border-radius: 0.5em;
+    font: inherit;
+    padding: 0.5em 1em;
+    margin: 0;
+    outline: 0;
+    text-align: center;
+}
+
 .save-btn{
  
     outline:none;
@@ -607,7 +621,7 @@ z-index:  10;
    border-width:0;
    background-color:var(--color-neutral-medium);
    padding:0.5em 2em 0.5em 1em;
-   border-radius:0.3em;
+   border-radius:0.5em;
    font:inherit;
    outline:0;
    position:relative;
@@ -916,6 +930,24 @@ z-index:  10;
   margin-left: 1rem;
   width: 3.5rem;
   height: 3.5rem;
+}
+
+.user-profile-animal{
+  display: flex;
+  padding: 0 1em;
+}
+
+.user-profile-animal-item{
+ 
+padding: 0 0.2em;
+}
+
+.user-profile-animal-item img{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+
 }
 
 
