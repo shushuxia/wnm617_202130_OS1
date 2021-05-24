@@ -7,6 +7,9 @@ const RecentPage = async() => {
    console.log(d)
 
    let valid_animals = d.result.reduce((r,o)=>{
+
+   $("#recent-profile-modal .modal-body-location").html(makeRecentModalLocation(o))
+
       o.icon = o.img;
       if(o.lat && o.lng) r.push(o);
       return r;
