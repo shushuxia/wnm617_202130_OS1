@@ -92,10 +92,11 @@ const checkLocationAddForm = () => {
    let lat = $("#location-add-lat").val();
    let lng = $("#location-add-lng").val();
    let journal = $("#location-add-description").val();
+   let icon = $("#location-add-image").val();
 
    query({
       type:'insert_location',
-      params:[sessionStorage.animalId,lat,lng,journal]})
+      params:[sessionStorage.animalId,lat,lng,journal,icon]})
    .then(d=>{
       if(d.error) {
          throw d.error;
