@@ -11,7 +11,7 @@
    --color-neutral-lighter: #edf0ed;
    --color-neutral-light: #efe9e0;
    --color-neutral-mediumer: #b3bdb3;
-   --color-neutral-medium: #788578;
+   --color-neutral-medium: #e1dbd1;;
    --color-neutral-dark: #494949;
 
    --color-main-light: #e4fcd1;
@@ -153,7 +153,7 @@ width: 20vw;
   text-align: center;
   color: var(--color-neutral-light);
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .emoji{
@@ -187,7 +187,7 @@ width: 20vw;
 
 .hotdog {
    width:100%;
-   background-color:#e1dbd1;
+   background-color:var(--color-neutral-medium);
 
    padding:0.5em 1em;
 
@@ -263,9 +263,9 @@ width: 20vw;
 
 .delete-animal{
   color: var(--color-main-medium);
-  text-align: right;
+  text-align: left;
   font-weight: bold;
-  margin-right: 1em;
+  margin-left: 1em;
   margin-top: 1.5em;
 }
 
@@ -399,14 +399,14 @@ z-index:  10;
 
 .form-box {
     display: inline-block;
-    background-color: var(--color-neutral-light);
+    background-color: var(--color-neutral-medium);
     width: 95vw;
     height: 7em;
-    border: 1.5px solid var(--color-neutral-dark);
+  
     font: inherit;
     padding: 0.5em;
     margin: 0 2.5vw;
-    border-bottom: 1.5px solid var(--color-neutral-dark);
+   border: 0;
     border-radius: 5px;
     outline: 0;
 
@@ -598,6 +598,33 @@ z-index:  10;
 }
 
 
+.form-select {
+   position: relative;
+}
+.form-select>select {
+   display:inline-block;
+   width:100%;
+   border-width:0;
+   background-color:var(--color-neutral-medium);
+   padding:0.5em 2em 0.5em 1em;
+   border-radius:0.3em;
+   font:inherit;
+   outline:0;
+   position:relative;
+   overflow:hidden;
+   -webkit-appearance:none;
+}
+.form-select::after {
+   position:absolute;
+   top:50%;
+   right:0.5em;
+   content:'▼';
+   font-family:arial;
+   font-size:0.9em;
+   color:var(--color-neutral-dark);
+   pointer-events:none;
+   transform: translateY(-50%);
+}
 
 
 /* MODALS */
@@ -621,15 +648,40 @@ z-index:  10;
    
 }
 
+.delete-confirm-ask{
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-neutral-light);
+  margin-top: 2em;
+}
 
+.delete-confirm-options{
+  display: flex;
+}
+
+.delete-confirm-delete{
+  font-weight: bold;
+  color: var(--color-main-medium);
+  padding: 2em;
+}
+
+.delete-confirm-cancel{
+    font-weight: bold;
+  color: var(--color-neutral-light);
+  padding: 2em;
+}
 /* MODAL POPUP*/
 .modal-popup {
    position:absolute;
    top:50%;
    left:50%;
-   transform:translate(-50%,calc(-50% + 3em));
-   transition: all 0.3s;
+   transform:translate(-50%,calc(-50%));
+   transition: all 0.15s;
    width:80vw;
+   background-color: var(--color-neutral-dark);
+
+   text-align: center;
+   border-radius: 1em;
 }
 
 

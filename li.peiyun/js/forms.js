@@ -39,11 +39,12 @@ const checkAnimalAddForm = () => {
    let type = $("#animal-add-type").val();
    let breed = $("#animal-add-breed").val();
    let description = $("#animal-add-description").val();
+   let image = $("#animal-add-image").val();
 
 
    query({
       type:'insert_animal',
-      params:[sessionStorage.userId,name,type,breed,description]})
+      params:[sessionStorage.userId,name,type,breed,description,image]})
    .then(d=>{
       if(d.error) {
          throw d.error;

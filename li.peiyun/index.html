@@ -113,10 +113,8 @@
             <div class="modal-drawer left overscroll">
                <div class="modal-head">Tracking Detail</div>
                <div class="modal-body">
-
                
-               </div> 
-               <div class="modal-body-location"></div>       
+               </div>        
             </div>
          </div>
       </div>
@@ -127,7 +125,7 @@
 
 <!--ADD LOCATION PAGE-->
    <section data-role="page" id="location-add-page">
-   	 <header data-role="header">
+     <header data-role="header">
          <h1>Add Location</h1>
          <ul>
             <li><a href="#" data-rel="back">&larr;</a></li>
@@ -138,7 +136,7 @@
      <div data-role="main">
         <input type="hidden" id="location-add-lat">
         <input type="hidden" id="location-add-lng">
-     	  <div class="map"></div>
+        <div class="map"></div>
         <!--
         <div class="recent-pin" data-activate="#add-location-modal">
             <img src="img/icon/paw.png">
@@ -154,8 +152,8 @@
                </div>  
                <div class="modal-confirmation">Add this location to</div>
                <div>
-               	<div class="add-location-choice"><a href="#existed-animal-page">Existed Animal </a></div>
-               	<div class="add-location-choice"><a href="#create-new-page">Create New Animal</a></div>
+                <div class="add-location-choice"><a href="#existed-animal-page">Existed Animal </a></div>
+                <div class="add-location-choice"><a href="#create-new-page">Create New Animal</a></div>
 
                </div>
             </div>
@@ -166,7 +164,7 @@
 
 <!--LOCATION DESCRIPTION PAGE-->
    <section data-role="page" id="location-description-page">
-   	 <header data-role="header">
+     <header data-role="header">
          <h1>Add Location Description</h1>
          <ul>
             <li><a href="#" data-rel="back">&larr;</a></li>
@@ -176,7 +174,7 @@
      </header>
      <div data-role="main" class="display-flex flex-column">
 
-     	<div class="location-description-bottom">
+      <div class="location-description-bottom">
 
       <form id="location-add-form" data-ajax="false">
                <div>
@@ -185,17 +183,17 @@
                      <input type="file" data-role="none" id="location-add-upload">
                   </label>
                </div>
-	     
-	      <div class="form-control">
-	        <label for="location-add-description" class="form-label">Note</label>
-	        <textarea id="location-add-description" class="form-box" data-role="none" placeholder="Write note about the animal"></textarea>
-	      </div>
+       
+        <div class="form-control">
+          <label for="location-add-description" class="form-label">Note</label>
+          <textarea id="location-add-description" class="form-box" data-role="none" placeholder="Write note about the animal"></textarea>
+        </div>
       </form>
-	    
-     		
-     	</div>
+      
+        
+      </div>
 
-     	
+      
      </div>
 
    </section>
@@ -257,7 +255,13 @@
       <div data-role="main" class="display-flex flex-column">
       <form id="animal-add-form" data-ajax="false">
       <input type="hidden" id="animal-add-destination" value="#list-page">
-        <div class="animal-add-icon"></div>
+
+        <div>
+          <input type="hidden" id="animal-add-image">
+          <label class="image-uploader thumbnail">
+            <input type="file" data-role="none" id="animal-add-upload">
+          </label>
+        </div>
         <div class="form-control">
           <label for="animal-add-name" class="form-label">Name</label>
           <input id="animal-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
@@ -274,12 +278,7 @@
           <label for="animal-add-description" class="form-label">Description</label>
           <textarea id="animal-add-description" class="form-box" data-role="none" placeholder="Type animal description"></textarea>
         </div>
-      <a href="#location-description-page">
-      <div class ="pin-container">
-        <img src="img/icon/map.svg" class="pin-icon"> 
-          <div class="pin-text"> Add Location</div>
-      </div>
-      </a>
+
       </form>
       </div>
 

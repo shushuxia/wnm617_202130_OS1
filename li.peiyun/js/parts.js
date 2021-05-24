@@ -33,7 +33,7 @@ const makeAnimalList = templater(o=>`
 `);
 
 const makeUserProfile = templater(o=>`
-	<div class="profile-image">
+  <div class="profile-image">
         <img src="${o.img}" alt="">
     </div>
     <div class="profile-bg"></div>
@@ -46,12 +46,12 @@ const makeUserProfile = templater(o=>`
         <p> Favorite animal to track is <span class="keyword">Andy</span>.</p>
     </div>
     <div class="setting"><a href="#settings-page">
-    	<img src="img/icon/setting.svg" alt=""></a></div>
+      <img src="img/icon/setting.svg" alt=""></a></div>
 `);
 
 const makeAnimalProfile = templater(o=>`
-	
-	<div class="profile-top-bg"></div>
+  
+  <div class="profile-top-bg"></div>
     <div class="profile-top">
         <div class="animal-profile-image"><img src="${o.img}"></div>
         <div class="animal-profile-text">
@@ -59,16 +59,14 @@ const makeAnimalProfile = templater(o=>`
             <div class="animal-profile-info">
                 <p class="animal-profile-name"><strong>Type: </strong>${o.type}</p>
                 <p class="animal-profile-name"><strong>Breed: </strong>${o.breed}</p>
-        	</div>
-    	</div>
+          </div>
+      </div>
     </div>
    
     <div class="profile-description">
         <strong>Description: </strong>${o.description}
     </div>
-
-
-	
+  
 `);
 
 const makeRecentModal = o =>`
@@ -82,19 +80,12 @@ const makeRecentModal = o =>`
         <p>${o.type}</p>
         <p class="modal-text-title">Breed</p>
         <p>${o.breed}</p>
-        <p class="modal-text-title">Description</p>
-        <p>${o.description}</p>
-    </div>
-    
-`;
-
-const makeRecentModalLocation = o =>`
-    <div class="modal-text">
-        <p class="modal-text-title">Traking Time</p>
-        <p>${o.date_create}</p>        
-        <p class="modal-text-title">Journal</p>
-        <p>${o.journal}</p>
-
+        <p class="modal-text-title">Tracking Date</p>
+        <p>${o.date_create}</p>
+        <p class="modal-text-title">Tracking Location</p>
+        <p>100 Exchange street, Boston, MA</p>
+        <p class="modal-text-title">Note</p>
+        <p>2 weeks after last time I saw Andy, the wound on his cheek seems to be cured. I found him this time besides the food waste bin at the street corner. The weather is getting cold, so I guess it would be easier for stay cats like him to find food not rotten yet from trash bins.</p>
     </div>
     
 `;
@@ -106,7 +97,6 @@ const makeAnimalEditForm = templater(o=>`
       <input type="file" data-role="none" id="animal-edit-upload">
    </label>
 </div>
-
 <div class="form-control">
     <label for="animal-edit-name" class="form-label">Name</label>
     <input id="animal-edit-name" type="text" class="form-input" data-role="none" placeholder="Type animal name" value=${o.name}>
@@ -129,7 +119,6 @@ const makeAnimalEditForm = templater(o=>`
 const makeUserEditForm = templater(o=>`
 <a href="#user-upload-page"><div class="user-photo-icon"><img src="${o.img}" alt=""></div>
 </a>
-
 <div class="form-control">
     <label for="user-edit-username" class="form-label">Username</label>
     <input id="user-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your username" value="${o.username}">
@@ -142,7 +131,6 @@ const makeUserEditForm = templater(o=>`
     <label for="user-edit-email" class="form-label">Email</label>
     <input id="user-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your email" value="${o.email}">
 </div>
-
 `);
 
 
